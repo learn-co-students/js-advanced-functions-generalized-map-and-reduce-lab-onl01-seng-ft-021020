@@ -9,9 +9,9 @@ function map(array, callback) {
 }
 
 function reduce(array, callback, startPoint = 0) {
-  let output = array[0];
-  output += startPoint ? startPoint : 0;
-  for (let i = 1; i < array.length; i++) {
+  let output =  !!startPoint ? startPoint : array[0];
+  let startIndex = !!startPoint ? 0 : 1
+  for (let i = startIndex; i < array.length; i++) {
     const element = array[i];
     output = callback(element, output);
   }
