@@ -7,19 +7,13 @@ function map(array, operation) {
     return newArray;
 }
 
-function reduce(array, func, startingPoint){
-    let accumulator;
-    let index;
+function reduce(array, operation, start){
+    let total = (!!start) ? starting : array[0]
+    let i = (!!start) ? 0 : 1
 
-    if(!!startingPoint){
-        accumulator = startingPoint;
-        index = 0;
-    } else {
-        accumulator = func(array[0],array[1]);
-        index = 2;
+    for (i; i < array.length; i++) {
+        total = operation(array[i], total)
     }
-    for(index; index< array.length; index++){
-        accumulator = func(accumulator, array[index])
-    }
-    return accumulator;
+
+    return total
 }
