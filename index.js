@@ -8,7 +8,7 @@ function map(array, operation) {
 }
 
 function reduce(array, operation, start){
-    let total = (!!start) ? starting : array[0]
+    let total = (!!start) ? start : array[0]
     let i = (!!start) ? 0 : 1
 
     for (i; i < array.length; i++) {
