@@ -17,6 +17,7 @@ function reduce(array, fnc, startingPoint){
     }
 
     // debugger
+    
     for(index; index< array.length; index++){
         value = fnc(value, array[index])
     }
