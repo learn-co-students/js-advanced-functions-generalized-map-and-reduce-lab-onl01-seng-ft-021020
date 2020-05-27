@@ -4,19 +4,19 @@ function map(array, fn){
     return newArray 
 }
 
-function reduce(array, func, startingPoint){
-    let accumulator;
+function reduce(array, fnc, startingPoint){
+    let value;
     let index;
 
     if(!!startingPoint){
-        accumulator = startingPoint;
+        value = startingPoint;
         index = 0;
     } else {
-        accumulator = func(array[0],array[1]);
+        value = fnc(array[0],array[1]);
         index = 2;
     }
     for(index; index< array.length; index++){
-        accumulator = func(accumulator, array[index])
+        value = fnc(value, array[index])
     }
-    return accumulator;
+    return value;
 }
